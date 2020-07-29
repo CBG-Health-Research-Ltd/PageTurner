@@ -17,7 +17,7 @@ namespace PageTurner
         [STAThread]
         static void Main(string[] args)
         {
-            
+            Directory.CreateDirectory(@"C:\nzhs\questioninformation\QuestionLogTemp");
             DateTime currentTimeMS = DateTime.Now;
             string Username = Environment.UserName; //Get current user
             string arg0 = null; 
@@ -28,7 +28,7 @@ namespace PageTurner
             if (args.Length > 2) { arg2 = args[2]; }
             string check = "Arg1 = " + arg0 + " and Arg2 = " + arg1; //The string containing PageTurner.exe arguments.
             string Arguments = arg0 + " " + arg1 + " " + arg2;
-            var myFile = File.Create(@"C:\nzhs\questioninformation\QuestionLog\" + Arguments + ".txt");
+            var myFile = File.Create(@"C:\nzhs\questioninformation\QuestionLogTemp\" + Arguments + ".txt");
             myFile.Close();
            
         }
